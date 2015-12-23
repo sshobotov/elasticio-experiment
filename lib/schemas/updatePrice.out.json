@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "PRODUCTID": {
+            "type": "number",
+            "required": true,
+            "title": "ID"
+        },
+        "Product Name": {
+            "type": "string",
+            "title": "Name",
+            "required": true
+        },
+        "Product Code": {
+            "type": "string",
+            "title": "Code"
+        },
+        "Vendor Name": {
+            "type": "string",
+            "title": "Vendor"
+        }
+    }
+}

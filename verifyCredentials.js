@@ -4,8 +4,8 @@ function verify(credentials, cb) {
 
     console.log('About to verify credentials');
 
-    if (!credentials.name) {
-        console.log('Invalid credentials');
+    if (!credentials.authToken) {
+        console.error('Generated Auth Token can not be empty');
 
         return cb(null, {verified: false});
     }

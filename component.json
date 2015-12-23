@@ -1,32 +1,46 @@
 {
-    "title": "hello world nodejs",
-    "description": "Hello world component for the elastic.io platform",
+    "title": "ZohoCRM NodeJS",
+    "description": "ZohoCRM component for the elastic.io platform",
     "credentials": {
         "fields": {
-            "name": {
-                "label": "Your name",
+            "authToken": {
+                "label": "Generated Auth Token",
                 "required": true,
-                "viewClass": "TextFieldView"
+                "viewClass": "TextAreaView"
             }
         }
     },
     "triggers": {
-        "getHello": {
-            "main": "./lib/triggers/getHello.js",
+        "getProducts": {
+            "main": "./lib/triggers/getProducts.js",
             "type": "polling",
-            "title": "Query Hello",
+            "title": "Fetch Products by query",
             "metadata": {
-                "out": "./lib/schemas/getHello.out.json"
+                "out": "./lib/schemas/getProducts.out.json"
+            },
+            "fields": {
+                "criteria": {
+                    "label": "Filtering criteria",
+                    "required": true,
+                    "viewClass": "TextAreaView"
+                }
             }
         }
     },
     "actions": {
-        "updateHello": {
-            "main": "./lib/actions/updateHello.js",
-            "title": "Update Hello",
+        "updatePrice": {
+            "main": "./lib/actions/updatePrice.js",
+            "title": "Update List Price of a Product",
             "metadata": {
-                "in": "./lib/schemas/updateHello.in.json",
-                "out": "./lib/schemas/updateHello.out.json"
+                "in": "./lib/schemas/updatePrice.in.json",
+                "out": "./lib/schemas/updatePrice.out.json"
+            },
+            "fields": {
+                "priceBookID": {
+                    "label": "Price Book ID",
+                    "required": true,
+                    "viewClass": "TextFieldView"
+                }
             }
         }
     }
